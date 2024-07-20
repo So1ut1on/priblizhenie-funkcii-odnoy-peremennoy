@@ -1,0 +1,16 @@
+QMAKE_CXXFLAGS += -Werror -fsanitize=address,undefined
+QMAKE_LFLAGS=-fsanitize=address,undefined
+CONFIG += debug
+HEADERS       = window.h test_approx.h \
+                array.h \
+                interpolate.h \
+                matrix.h
+SOURCES       = test_approx.cpp \
+                window.cpp \
+                array.cpp \
+                interpolate.cpp \
+                matrix.cpp \
+                akima_impl.cpp \
+                splines_impl.cpp
+
+QT += widgets testlib
